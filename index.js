@@ -68,7 +68,7 @@ ohauth.percentEncode = function(s) {
 ohauth.baseString = function(method, url, params) {
     if (params.oauth_signature) delete params.oauth_signature;
     return [
-        method,
+        method.toUpperCase(),
         ohauth.percentEncode(url),
         ohauth.percentEncode(ohauth.qsString(params))].join('&');
 };
