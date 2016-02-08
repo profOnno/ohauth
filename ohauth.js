@@ -45,8 +45,9 @@ ohauth.xhr = function(method, url, auth, data, options, callback) {
     ohauth.rawxhr(method, url, data, headers, callback);
 };
 
-ohauth.nonce = function() {
-    for (var o = ''; o.length < 6;) {
+ohauth.nonce = function(len) {
+    n = len || 6
+    for (var o = ''; o.length < n;) {
         o += '0123456789ABCDEFGHIJKLMNOPQRSTUVWXTZabcdefghiklmnopqrstuvwxyz'[Math.floor(Math.random() * 61)];
     }
     return o;
